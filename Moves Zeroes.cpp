@@ -17,3 +17,26 @@ public:
     
     }
 };
+
+// ---O(n) solution---
+
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int n = nums.size();
+        int nxt=0;
+        for(int a : nums)
+        {
+            if(a != 0)
+            {
+                nums[nxt] = a;
+                nxt++;
+            }
+        }
+        
+        for(int i=nxt;i<n;i++)
+        {
+            nums[i] = 0;
+        }
+    }
+};
